@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  homologacao:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dataflow-backend
+    restart: always
+    ports:
+        - "8095:8095"
+    volumes:
+        - /home/dataflow/dataflow-backend/dist/:/home/node/app
+        - /home/dataflow/dataflow-backend/node_modules:/home/node/app/node_modules
